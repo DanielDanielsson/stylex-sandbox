@@ -16,6 +16,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@danieldanielsson/eslint-config": "^1.2.1",
     "@stylexjs/dev-runtime": "^0.3.0",
     "@stylexjs/eslint-plugin": "^0.3.0",
     "@stylexjs/nextjs-plugin": "^0.3.0",

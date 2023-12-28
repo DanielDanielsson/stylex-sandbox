@@ -1,4 +1,5 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
-
+{
+  "extends": ["@danieldanielsson/eslint-config/typescript"],
+  // Props spreading with stylex has to be turned off due to the way stylex is built.
+  "rules": {"react/jsx-props-no-spreading": "off"}
+}
