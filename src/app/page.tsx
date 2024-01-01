@@ -1,14 +1,14 @@
 'use client';
 
-import * as stylex from '@stylexjs/stylex';
 import { useContext, useState } from 'react';
-import { ThemeButton, ButtonThemes, buttonThemes } from './ThemeButton';
-import { colors } from '../config/tokens.stylex';
+import * as stylex from '@stylexjs/stylex';
 import { dark } from '../config/themes/dark';
 import { light } from '../config/themes/light';
 import { xmas } from '../config/themes/xmas';
+import { colors } from '../config/tokens.stylex';
 import { Header } from './Header';
 import { PageThemes, ThemeContext } from './Providers';
+import { ButtonThemes, buttonThemes, ThemeButton } from './ThemeButton';
 
 const styles = stylex.create({
   main: {
@@ -53,8 +53,7 @@ const styles = stylex.create({
 });
 
 const Home = () => {
-  const [activeButtonTheme, setActiveButtonTheme] =
-    useState<ButtonThemes>('inherit');
+  const [activeButtonTheme, setActiveButtonTheme] = useState<ButtonThemes>('inherit');
 
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -86,9 +85,7 @@ const Home = () => {
             <span>Set Page theme:</span>
             {pageThemes.map((themeOption) => (
               <button
-                onClick={() =>
-                  handleThemeChange(themeOption.label as PageThemes)
-                }
+                onClick={() => handleThemeChange(themeOption.label as PageThemes)}
                 {...stylex.props(
                   styles.changeThemeButton,
                   theme === themeOption.label && styles.changeThemeButtonActive,
@@ -103,13 +100,10 @@ const Home = () => {
             <span>Set Button theme:</span>
             {buttonThemes.map((themeOption) => (
               <button
-                onClick={() =>
-                  setActiveButtonTheme(themeOption.label as ButtonThemes)
-                }
+                onClick={() => setActiveButtonTheme(themeOption.label as ButtonThemes)}
                 {...stylex.props(
                   styles.changeThemeButton,
-                  activeButtonTheme === themeOption.label &&
-                    styles.changeThemeButtonActive,
+                  activeButtonTheme === themeOption.label && styles.changeThemeButtonActive,
                 )}
                 type="button"
               >
@@ -118,11 +112,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <ThemeButton
-          label="Click mee!!"
-          xStyles={styles.button}
-          theme={activeButtonTheme}
-        />
+        <ThemeButton label="Click mee!!" xStyles={styles.button} theme={activeButtonTheme} />
       </div>
     </main>
   );

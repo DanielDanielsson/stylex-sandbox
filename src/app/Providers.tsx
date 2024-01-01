@@ -17,13 +17,6 @@ export const ThemeContext = createContext<Theme>({
 export const Providers = ({ children }: React.PropsWithChildren) => {
   const [theme, setTheme] = useState<PageThemes>('dark');
 
-  const themeProviderValue = useMemo(
-    () => ({ theme, setTheme }),
-    [theme, setTheme],
-  );
-  return (
-    <ThemeContext.Provider value={themeProviderValue}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  const themeProviderValue = useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
+  return <ThemeContext.Provider value={themeProviderValue}>{children}</ThemeContext.Provider>;
 };

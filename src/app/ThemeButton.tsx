@@ -1,10 +1,10 @@
 import React from 'react';
-import * as stylex from '@stylexjs/stylex';
 import type { StyleXStyles } from '@stylexjs/stylex';
-import { colors } from '../config/tokens.stylex';
+import * as stylex from '@stylexjs/stylex';
 import { dark } from '../config/themes/dark';
 import { light } from '../config/themes/light';
 import { xmas } from '../config/themes/xmas';
+import { colors } from '../config/tokens.stylex';
 
 export type ButtonThemes = 'xmas' | 'light' | 'dark' | 'inherit';
 
@@ -36,20 +36,11 @@ const styles = stylex.create({
   },
 });
 
-export const ThemeButton = ({
-  label,
-  onClick,
-  theme,
-  xStyles,
-}: ThemeButtonProps) => {
+export const ThemeButton = ({ label, onClick, theme, xStyles }: ThemeButtonProps) => {
   const themes = { dark, xmas, light, inherit: null };
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      {...stylex.props(themes[theme], styles.base, xStyles)}
-    >
+    <button type="button" onClick={onClick} {...stylex.props(themes[theme], styles.base, xStyles)}>
       {label}
     </button>
   );
