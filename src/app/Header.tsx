@@ -41,7 +41,8 @@ export const Header = () => (
       <ul {...stylex.props(styles.linkWrapper)}>
         <li {...stylex.props(styles.links)}>link 1</li>
         <li {...stylex.props(styles.links)}>link 2</li>
-        <li {...stylex.props(styles.links)}>link 3</li>
+        <li {...stylex.props(styles.links)}>Link 3</li>
+        <li {...stylex.props(styles.links)}>Link 4</li>
       </ul>
     </nav>
     <div {...stylex.props(styles.linkWrapper)}>
